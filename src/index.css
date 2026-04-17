@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+@plugin "daisyui/theme" {
+ 
+   name: "light";
+  default: true;
+  --color-primary: #1E3A8A;
+  --color-secondary:#FBBF24 ;
+}
+
+/* 🔹 1. Deep Blue + Gold (Premium Look ⭐)
+Primary: #1E3A8A (Deep Blue)
+Secondary: #FBBF24 (Gold)
+Background: #F9FAFB (Light Gray)
+
+👉 Look: Professional + Premium
+👉 Use: Admin dashboard, header */
