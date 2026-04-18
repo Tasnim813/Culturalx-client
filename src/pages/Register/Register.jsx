@@ -1,59 +1,57 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../hook/useAuth';
-import axios from 'axios';
 import { Link, useLocation, useNavigate } from 'react-router';
+import { UploadImage } from '../../Utils';
+
 
 const Register = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const {registerUser,updateUserProfile}=useAuth()
-  const location=useLocation()
-  const navigate=useNavigate()
-  const handleRegister = (data) => {
-    console.log(data.photo[0]);
-    const profileImag=data.photo[0];
-    registerUser(data.email,data.password)
-    .then(result=>{
-      console.log(result.user)
-      // store the image some and get the photo url
-      const formData=new FormData()
-      formData.append('image',profileImag)
-      const Image_API_URL=`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_Image_host}`
-    axios.post(Image_API_URL,formData)
-    .then(res=>{
-      console.log('After image upload',res.data.data.url)
+  const { registerUser, updateUserProfile } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
 
-      // update user profile
-      const userProfile={
-        displayName:data.name,
-        photoURL:res.data.data.url,
-         
-      }
-      updateUserProfile(userProfile)
-      .then(()=>{
-        console.log('user profile updated done')
-        navigate(location.state || '/')
-      })
-      .catch(error=>{
-        console.log(error)
-      })
-    })
-      
-    })
-    .catch(error=>{
-      console.log(error)
-    })
+  const handleRegister = async (data) => {
+    try {
+      // 1. get image
+      const profileImage = data.image[0];
+
+      // 2. create user
+      const result = await registerUser(data.email, data.password);
+      console.log(result.user);
+
+      // 3. upload image
+      const imageUrl = await UploadImage(profileImage);
+      console.log('Image URL:', imageUrl);
+
+      // 4. update profile
+      const userProfile = {
+        displayName: data.name,
+        photoURL: imageUrl,
+      };
+
+      await updateUserProfile(userProfile);
+
+      console.log('Profile updated');
+
+      // 5. redirect
+      navigate(location.state || '/');
+
+    } catch (error) {
+      console.log(error);
+    }
   };
-  
 
   return (
     <div className='pt-30 pb-30 bg-[#F9FAFB] min-h-screen'>
 
-      <h1 className='text-center text-[#1E3A8A] text-4xl font-bold mb-3'>Register Now</h1>
+      <h1 className='text-center text-[#1E3A8A] text-4xl font-bold mb-3'>
+        Register Now
+      </h1>
 
       <div className='flex justify-center mx-auto items-center'>
 
-        <div className="card bg-white w-full max-w-sm shrink-0 shadow-2xl border-t-4 border-[#1E3A8A]">
+        <div className="card bg-white w-full max-w-sm shadow-2xl border-t-4 border-[#1E3A8A]">
 
           <form onSubmit={handleSubmit(handleRegister)} className="card-body">
 
@@ -61,50 +59,87 @@ const Register = () => {
 
               {/* Name */}
               <label className="label text-[#1E3A8A]">Name</label>
-              <input type="text" {...register('name', { required: true })} className="input input-bordered" placeholder="Name" />
-              {errors.name?.type === 'required' && <p className='text-red-500'>Name is required</p>}
+              <input
+                type="text"
+                {...register('name', { required: true })}
+                className="input input-bordered"
+                placeholder="Name"
+              />
+              {errors.name && <p className='text-red-500'>Name is required</p>}
 
-              {/* photo and image*/}
+              {/* Image */}
               <label className="label text-[#1E3A8A]">Photo</label>
-        
-              <input type="file" {...register('photo', { required: true })} className="file-input" placeholder="Your photo" />
-              {errors.photo?.type === 'required' && <p className='text-red-500'>Photo is required</p>}
+              <input
+                type="file"
+                {...register('image', { required: true })}
+                className="file-input"
+              />
+              {errors.image && <p className='text-red-500'>Photo is required</p>}
+
               {/* Email */}
               <label className="label text-[#1E3A8A]">Email</label>
-              <input type="email" {...register('email', { required: true })} className="input input-bordered" placeholder="Email" />
-              {errors.email?.type === 'required' && <p className='text-red-500'>Email is required</p>}
+              <input
+                type="email"
+                {...register('email', { required: true })}
+                className="input input-bordered"
+                placeholder="Email"
+              />
+              {errors.email && <p className='text-red-500'>Email is required</p>}
 
               {/* Password */}
               <label className="label text-[#1E3A8A]">Password</label>
-              <input type="password" {...register('password', { required: true, minLength: 6 })} className="input input-bordered" placeholder="Password" />
-              {errors.password?.type === 'required' && <p className='text-red-500'>Password is required</p>}
-              {errors.password?.type === 'minLength' && <p className='text-red-500'>Password is must 6 character or longer</p>}
+              <input
+                type="password"
+                {...register('password', { required: true, minLength: 6 })}
+                className="input input-bordered"
+                placeholder="Password"
+              />
+              {errors.password?.type === 'required' && (
+                <p className='text-red-500'>Password is required</p>
+              )}
+              {errors.password?.type === 'minLength' && (
+                <p className='text-red-500'>Minimum 6 characters</p>
+              )}
 
               {/* Phone */}
               <label className="label text-[#1E3A8A]">Phone</label>
-              <input type="number" {...register('phone', { required: true, minLength: 11 })} className="input input-bordered" placeholder="Phone Number" />
-              {errors.phone?.type === 'required' && <p className='text-red-500'>Phone Number is required</p>}
-              {errors.phone?.type === 'minLength' && <p className='text-red-500'>Phone Number must be 11 Character</p>}
+              <input
+                type="number"
+                {...register('phone', { required: true, minLength: 11 })}
+                className="input input-bordered"
+                placeholder="Phone Number"
+              />
+              {errors.phone?.type === 'required' && (
+                <p className='text-red-500'>Phone is required</p>
+              )}
 
               {/* Address */}
               <label className="label text-[#1E3A8A]">Address</label>
-              <input type="text" {...register('address', { required: true })} className="input input-bordered" placeholder="Address" />
-              {errors.address?.type === 'required' && <p className='text-red-500'>Address is required</p>}
+              <input
+                type="text"
+                {...register('address', { required: true })}
+                className="input input-bordered"
+                placeholder="Address"
+              />
+              {errors.address && (
+                <p className='text-red-500'>Address is required</p>
+              )}
 
               {/* Button */}
-              <button className="btn btn-neutral mt-4 w-full bg-[#1E3A8A] hover:bg-[#152c6b] text-white border-none">
+              <button className="btn mt-4 w-full bg-[#1E3A8A] text-white border-none">
                 Register
               </button>
 
- <p>Already have an account <Link state={location.state} to='/login' > Login
-                
-              </Link></p>
+              <p className='text-center mt-2'>
+                Already have an account?{" "}
+                <Link state={location.state} to='/login' className='text-blue-600'>
+                  Login
+                </Link>
+              </p>
+
             </fieldset>
-
           </form>
-          
         </div>
-
       </div>
     </div>
   );

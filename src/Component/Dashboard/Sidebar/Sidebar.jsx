@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import { AiOutlineBars } from 'react-icons/ai';
 import { FcSettings } from 'react-icons/fc';
 import { GrLogout } from 'react-icons/gr';
+import AdminMenu from '../Menu/AdminMenu';
 
 const Sidebar = () => {
   const {logOut}=useAuth()
@@ -47,13 +48,7 @@ const Sidebar = () => {
 <Link to="/" className="text-[#1E3A8A] text-3xl font-bold">
           LibraTech
         </Link>
-               {/* <Link
-              to='/'
-              className='text-2xl md:text-3xl font-bold flex items-center gap-2 bg-clip-text text-transparent bg-gradient-to-r from-lime-500 to-orange-500'
-            >
-              
-             LibraTech
-            </Link> */}
+             
             </div>
 
             {/* Profile */}
@@ -78,6 +73,7 @@ const Sidebar = () => {
          {/* <CustomerMenu />
              <SellerMenu />
                  <AdminMenu />     */}
+                 <AdminMenu></AdminMenu>
                        </nav>
            
           </div>

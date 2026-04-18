@@ -7,6 +7,7 @@ import Library from "../pages/Library/Library";
 import PrivateRoute from "./privateRoute";
 import DashBoardLayout from "../layout/DashBoardLayout";
 import Profile from "../pages/Dashboard/Common/Profile";
+import AddBook from "../pages/Dashboard/Admin/AddBook";
 
 export  const router=createBrowserRouter([
     {
@@ -46,6 +47,10 @@ export  const router=createBrowserRouter([
                 element:<PrivateRoute>
                     <Profile></Profile>
                 </PrivateRoute>
+            },
+            {
+                path:"Add-book",
+                element: <AddBook></AddBook>
             }
         ]
     }

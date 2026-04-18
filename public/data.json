@@ -1,0 +1,303 @@
+[
+  {
+    "id": "B001",
+    "title": "Basic Electrical Engineering",
+    "author": "B.L. Theraja",
+    "category": "Electrical",
+    "price": 420,
+    "image": "https://i.ibb.co.com/60XxDxyf/dc64cc28a3bedeaeb5a0c42e24c046e6.jpg",
+    "available": true,
+    "stock": 10
+  },
+  {
+    "id": "B002",
+    "title": "Electrical Machine Fundamentals",
+    "author": "S.K. Bhattacharya",
+    "category": "Electrical",
+    "price": 380,
+    "image": "https://i.ibb.co.com/XrXrd3fy/77b05b7963539588367d00165e784f84.jpg",
+    "available": true,
+    "stock": 6
+  },
+  {
+    "id": "B003",
+    "title": "Digital Electronics",
+    "author": "Morris Mano",
+    "category": "Electronics",
+    "price": 450,
+    "image": "https://i.ibb.co.com/4w6JB2QN/5641b996bff00f1b0499b729759ef940.jpg",
+    "available": false,
+    "stock": 0
+  },
+  {
+    "id": "B004",
+    "title": "Electronic Devices & Circuits",
+    "author": "Boylestad",
+    "category": "Electronics",
+    "price": 400,
+    "image": "https://i.ibb.co.com/Xf4dxF0X/f294cd678d177185adbee1b98153fd10.jpg",
+    "available": true,
+    "stock": 8
+  },
+  {
+    "id": "B005",
+    "title": "Computer Fundamentals",
+    "author": "P.K. Sinha",
+    "category": "Computer",
+    "price": 300,
+    "image": "https://i.ibb.co.com/hxyyDSPQ/40185fdfdfa37cac42e1c0204f012d86.jpg",
+    "available": true,
+    "stock": 15
+  },
+  {
+    "id": "B006",
+    "title": "Data Structure",
+    "author": "Schaum Series",
+    "category": "Computer",
+    "price": 350,
+    "image": "https://i.ibb.co.com/DHgTYRLd/fcfddcd19e29b017e85c8db39c859d25.jpg",
+    "available": true,
+    "stock": 9
+  },
+  {
+    "id": "B007",
+    "title": "Programming in C",
+    "author": "Dennis Ritchie",
+    "category": "Computer",
+    "price": 320,
+    "image": "https://i.ibb.co.com/Y7Zcrzp1/34a086ed29702d57c7a8a988d52b13ce.jpg",
+    "available": false,
+    "stock": 0
+  },
+  {
+    "id": "B008",
+    "title": "Surveying",
+    "author": "B.C. Punmia",
+    "category": "Civil",
+    "price": 390,
+    "image": "https://source.unsplash.com/300x400/?surveying,construction",
+    "available": true,
+    "stock": 7
+  },
+  {
+    "id": "B009",
+    "title": "Building Construction",
+    "author": "Sushil Kumar",
+    "category": "Civil",
+    "price": 410,
+    "image": "https://source.unsplash.com/300x400/?building,construction",
+    "available": true,
+    "stock": 5
+  },
+  {
+    "id": "B010",
+    "title": "Strength of Materials",
+    "author": "Bansal",
+    "category": "Civil",
+    "price": 370,
+    "image": "https://source.unsplash.com/300x400/?materials,engineering",
+    "available": false,
+    "stock": 0
+  },
+  {
+    "id": "B011",
+    "title": "Thermodynamics",
+    "author": "P.K. Nag",
+    "category": "Mechanical",
+    "price": 450,
+    "image": "https://source.unsplash.com/300x400/?mechanical,engine",
+    "available": true,
+    "stock": 11
+  },
+  {
+    "id": "B012",
+    "title": "Engineering Mechanics",
+    "author": "Hibbeler",
+    "category": "Mechanical",
+    "price": 430,
+    "image": "https://source.unsplash.com/300x400/?mechanics,physics",
+    "available": true,
+    "stock": 6
+  },
+  {
+    "id": "B013",
+    "title": "Machine Design",
+    "author": "Khurmi",
+    "category": "Mechanical",
+    "price": 480,
+    "image": "https://source.unsplash.com/300x400/?machine,design",
+    "available": true,
+    "stock": 4
+  },
+  {
+    "id": "B014",
+    "title": "Textile Fiber Science",
+    "author": "M. Ahmed",
+    "category": "Textile",
+    "price": 300,
+    "image": "https://source.unsplash.com/300x400/?textile,fabric",
+    "available": true,
+    "stock": 12
+  },
+  {
+    "id": "B015",
+    "title": "Fabric Manufacturing",
+    "author": "R. Islam",
+    "category": "Textile",
+    "price": 320,
+    "image": "https://source.unsplash.com/300x400/?fabric,industry",
+    "available": false,
+    "stock": 0
+  },
+  {
+    "id": "B016",
+    "title": "Dyeing & Finishing",
+    "author": "K. Rahman",
+    "category": "Textile",
+    "price": 340,
+    "image": "https://source.unsplash.com/300x400/?color,textile",
+    "available": true,
+    "stock": 8
+  },
+
+  {
+    "id": "B017",
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "category": "Story",
+    "price": 280,
+    "image": "https://source.unsplash.com/300x400/?novel,book",
+    "available": true,
+    "stock": 10
+  },
+  {
+    "id": "B018",
+    "title": "Harry Potter",
+    "author": "J.K. Rowling",
+    "category": "Story",
+    "price": 500,
+    "image": "https://source.unsplash.com/300x400/?magic,book",
+    "available": true,
+    "stock": 5
+  },
+  {
+    "id": "B019",
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert Kiyosaki",
+    "category": "Story",
+    "price": 300,
+    "image": "https://source.unsplash.com/300x400/?finance,book",
+    "available": true,
+    "stock": 7
+  },
+  {
+    "id": "B020",
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "category": "Story",
+    "price": 350,
+    "image": "https://source.unsplash.com/300x400/?selfhelp,book",
+    "available": false,
+    "stock": 0
+  },
+  {
+    "id": "B021",
+    "title": "Think and Grow Rich",
+    "author": "Napoleon Hill",
+    "category": "Story",
+    "price": 330,
+    "image": "https://source.unsplash.com/300x400/?success,book",
+    "available": true,
+    "stock": 9
+  },
+  {
+    "id": "B022",
+    "title": "Sherlock Holmes",
+    "author": "Arthur Conan Doyle",
+    "category": "Story",
+    "price": 290,
+    "image": "https://source.unsplash.com/300x400/?detective,book",
+    "available": true,
+    "stock": 6
+  },
+  {
+    "id": "B023",
+    "title": "Himu Series",
+    "author": "Humayun Ahmed",
+    "category": "Story",
+    "price": 250,
+    "image": "https://source.unsplash.com/300x400/?novel,reading",
+    "available": true,
+    "stock": 14
+  },
+  {
+    "id": "B024",
+    "title": "Misir Ali Series",
+    "author": "Humayun Ahmed",
+    "category": "Story",
+    "price": 260,
+    "image": "https://source.unsplash.com/300x400/?mystery,book",
+    "available": true,
+    "stock": 11
+  },
+  {
+    "id": "B025",
+    "title": "Chander Pahar",
+    "author": "Bibhutibhushan",
+    "category": "Story",
+    "price": 270,
+    "image": "https://source.unsplash.com/300x400/?adventure,book",
+    "available": false,
+    "stock": 0
+  },
+  {
+    "id": "B026",
+    "title": "Pather Panchali",
+    "author": "Bibhutibhushan",
+    "category": "Story",
+    "price": 260,
+    "image": "https://source.unsplash.com/300x400/?classic,book",
+    "available": true,
+    "stock": 8
+  },
+  {
+    "id": "B027",
+    "title": "Devdas",
+    "author": "Sarat Chandra",
+    "category": "Story",
+    "price": 240,
+    "image": "https://source.unsplash.com/300x400/?romance,book",
+    "available": true,
+    "stock": 6
+  },
+  {
+    "id": "B028",
+    "title": "Parineeta",
+    "author": "Sarat Chandra",
+    "category": "Story",
+    "price": 230,
+    "image": "https://source.unsplash.com/300x400/?love,book",
+    "available": true,
+    "stock": 5
+  },
+  {
+    "id": "B029",
+    "title": "Feluda Samagra",
+    "author": "Satyajit Ray",
+    "category": "Story",
+    "price": 380,
+    "image": "https://source.unsplash.com/300x400/?thriller,book",
+    "available": true,
+    "stock": 9
+  },
+  {
+    "id": "B030",
+    "title": "Tin Goyenda",
+    "author": "Rakib Hasan",
+    "category": "Story",
+    "price": 220,
+    "image": "https://source.unsplash.com/300x400/?kids,book",
+    "available": true,
+    "stock": 13
+  }
+]
