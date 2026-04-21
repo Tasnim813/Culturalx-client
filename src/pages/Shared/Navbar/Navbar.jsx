@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router';
 import { AiOutlineMenu } from 'react-icons/ai';
 import useAuth from '../../../hook/useAuth';
@@ -7,6 +7,17 @@ import avatarImg from '../../../assets/placeholder.jpg';
 const Navbar = () => {
   const { user, logOut } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // 🔥 scroll shadow effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleLogOut = () => {
     logOut()
@@ -35,7 +46,11 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-[#F9FAFB] shadow-sm px-4">
+    <div
+      className={`navbar bg-[#F9FAFB] px-4 sticky top-0 z-50 transition-all duration-300 ${
+        scrolled ? 'shadow-md' : ''
+      }`}
+    >
       {/* LEFT */}
       <div className="navbar-start">
         {/* Mobile menu */}
