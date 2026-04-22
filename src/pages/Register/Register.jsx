@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../hook/useAuth';
 import { Link, useLocation, useNavigate } from 'react-router';
-import { UploadImage } from '../../Utils';
+import { saveOrUpdateUser, UploadImage } from '../../Utils';
 
 
 const Register = () => {
@@ -20,15 +20,24 @@ const Register = () => {
       const result = await registerUser(data.email, data.password);
       console.log(result.user);
 
+     
+
       // 3. upload image
       const imageUrl = await UploadImage(profileImage);
       console.log('Image URL:', imageUrl);
+      await saveOrUpdateUser({
+  name: data.name,
+  email: data.email,
+  image: imageUrl,
+ 
+})
 
       // 4. update profile
       const userProfile = {
         displayName: data.name,
         photoURL: imageUrl,
       };
+
 
       await updateUserProfile(userProfile);
 

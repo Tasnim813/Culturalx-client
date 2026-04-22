@@ -12,6 +12,8 @@ const AdminMenu = () => {
                 address='static-page'
               />
       <MenuItem icon={FaUserCog} label='Add Event' address='Add-event' />
+      <MenuItem icon={FaUserCog} label='Total Booking' address='Total-booking' />
+
       <MenuItem icon={ImCart} label='Manage Request' address='manage-request' />
     </>
   )

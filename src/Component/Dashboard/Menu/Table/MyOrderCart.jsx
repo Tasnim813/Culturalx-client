@@ -2,7 +2,6 @@ import axios from "axios"
 import { motion } from "framer-motion"
 import useAuth from "../../../../hook/useAuth"
 
-
 const MyOrderCart = ({ order }) => {
   const { user } = useAuth()
 
@@ -25,7 +24,7 @@ const MyOrderCart = ({ order }) => {
       orderId: _id,
       eventName,
       price: Number(price),
-      quantity,
+      quantity: Number(quantity),
       customer: {
         name: user.displayName,
         email: user.email,
@@ -57,7 +56,6 @@ const MyOrderCart = ({ order }) => {
       <p>Quantity: {quantity}</p>
       <p>Price: ${price}</p>
       <p>Location: {location}</p>
-
       <p>Status: {bookingStatus}</p>
 
       <p className="mt-2">

@@ -2,23 +2,55 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../hook/useAuth';
 import { Link, useLocation, useNavigate } from 'react-router';
+import { saveOrUpdateUser } from '../../Utils';
 
 const Login = () => {
   const {register,handleSubmit,formState:{errors}}=useForm()
   const {SignInUser }=useAuth()
   const location=useLocation()
   const navigate=useNavigate()
-  const handleLogin=(data)=>{
+  // const handleLogin=(data)=>{
+  //   console.log(data)
+  // const user= await  SignInUser(data.email,data.password)
+
+  //       await saveOrUpdateUser({
+  //     name: data.name,
+  //     email: data.email,
+  //     image: imageUrl,
+     
+  //   })
+    
+  //   .then(result=>{
+  //     console.log(result.user)
+  //     navigate(location?.state || '/') 
+  //   })
+    
+  //   .catch(error=>{
+  //     console.log(error)
+  //   })
+  // }
+  const handleLogin = async (data) => {
+  try {
     console.log(data)
-    SignInUser(data.email,data.password)
-    .then(result=>{
-      console.log(result.user)
-      navigate(location?.state || '/') 
+
+    const result = await SignInUser(data.email, data.password)
+    const user = result.user
+
+    // ✅ DB update (login time)
+    await saveOrUpdateUser({
+      name: user.displayName || "No Name",
+      email: user.email,
+      image: user.photoURL || "",
     })
-    .catch(error=>{
-      console.log(error)
-    })
+
+    console.log(user)
+
+    navigate(location?.state || '/')
+
+  } catch (error) {
+    console.log(error)
   }
+}
     return (
         <div className='pt-30 pb-30 bg-[#F9FAFB] min-h-screen'>
 

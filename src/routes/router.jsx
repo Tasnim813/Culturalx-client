@@ -10,6 +10,8 @@ import Profile from "../pages/Dashboard/Common/Profile";
 import AddEvent from "../pages/Dashboard/Admin/AddEvent";
 import EventDetail from "../pages/Home/EventDetail/EventDetail";
 import MyOrder from "../pages/Dashboard/Cutomer/MyOrder";
+import Payment from "../Component/Dashboard/Payment/Payment";
+import TotalBooking from "../pages/Dashboard/Admin/TotalBooking";
 
 
 export  const router=createBrowserRouter([
@@ -37,6 +39,10 @@ export  const router=createBrowserRouter([
             {
                 path:'/event-details/:id',
                 Component: EventDetail
+            },
+            {
+                path: '/payment-success',
+                Component: Payment
             }
            
         ]
@@ -58,6 +64,11 @@ export  const router=createBrowserRouter([
             {
                 path:"Add-event",
                 element: <AddEvent></AddEvent>
+            },
+            {
+                path:"Total-booking",
+                element: <TotalBooking></TotalBooking>
+
             },
             {
                 path:"my-orders",
