@@ -22,14 +22,24 @@ const MyOrder = () => {
   if (isLoading) return <Loading />
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-5">
-      {orders.length > 0 ? (
-        orders.map(order => (
-          <MyOrderCart key={order._id} order={order} />
-        ))
-      ) : (
-        <p>No orders found</p>
-      )}
+    <div className="min-h-screen bg-[#F6FDF9] p-5">
+
+      <h2 className="text-2xl font-bold text-center mb-6 text-[#0F3D2E]">
+        My Orders
+      </h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {orders.length > 0 ? (
+          orders.map(order => (
+            <MyOrderCart key={order._id} order={order} />
+          ))
+        ) : (
+          <p className="text-center col-span-full text-gray-500">
+            No orders found
+          </p>
+        )}
+      </div>
+
     </div>
   )
 }

@@ -10,7 +10,9 @@ const Event = () => {
       const res = await axios.get(`${import.meta.env.VITE_API_URL}/events`);
       return res.data;
     },
+
   });
+  console.log(events)
 
   // Loading state handling
   if (isLoading) {

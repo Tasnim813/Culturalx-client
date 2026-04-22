@@ -6,12 +6,14 @@ import Register from "../pages/Register/Register";
 import Library from "../pages/Library/Library";
 import PrivateRoute from "./privateRoute";
 import DashBoardLayout from "../layout/DashBoardLayout";
-import Profile from "../pages/Dashboard/Common/Profile";
 import AddEvent from "../pages/Dashboard/Admin/AddEvent";
 import EventDetail from "../pages/Home/EventDetail/EventDetail";
 import MyOrder from "../pages/Dashboard/Cutomer/MyOrder";
 import Payment from "../Component/Dashboard/Payment/Payment";
 import TotalBooking from "../pages/Dashboard/Admin/TotalBooking";
+
+import ManageUser from "../pages/Dashboard/Admin/ManageUser";
+import Static from "../pages/Dashboard/Common/Static";
 
 
 export  const router=createBrowserRouter([
@@ -38,7 +40,10 @@ export  const router=createBrowserRouter([
             },
             {
                 path:'/event-details/:id',
-                Component: EventDetail
+                element:<PrivateRoute>
+                    <EventDetail></EventDetail>
+                </PrivateRoute> 
+                
             },
             {
                 path: '/payment-success',
@@ -58,7 +63,7 @@ export  const router=createBrowserRouter([
             {
                 index:true,
                 element:<PrivateRoute>
-                    <Profile></Profile>
+                    <Static></Static>
                 </PrivateRoute>
             },
             {
@@ -73,7 +78,13 @@ export  const router=createBrowserRouter([
             {
                 path:"my-orders",
                 element: <MyOrder></MyOrder>
+            },
+            {
+                path:'manage-user',
+                element: <ManageUser></ManageUser>
+
             }
+            
         ]
     }
     

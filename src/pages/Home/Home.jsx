@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import Card from './Card';
 import Loading from '../Loading/loading';
+import { Link } from 'react-router';
 
 const Home = () => {
     // ✅ Event fetch korar jonno useQuery
@@ -29,17 +30,17 @@ const Home = () => {
             {/* 2. Events Section */}
            
                 <div className="my-16">
-                    <h2 className="text-4xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-500 text-center">
-                        Upcoming Popular Events
-                    </h2>
+                   <h2 className="text-4xl font-extrabold mb-4 text-center text-[#0F3D2E]">
+  Upcoming Popular Events
+</h2>
 
-                    <p className="mb-10 text-gray-600 text-center max-w-2xl mx-auto">
-                        Discover the best cultural, musical, and food events happening around you. 
-                        Book your tickets now and create unforgettable memories!
-                    </p>
+<p className="mb-10 text-gray-600 text-center max-w-2xl mx-auto">
+  Discover the best cultural, musical, and food events happening around you. 
+  Book your tickets now and create unforgettable memories!
+</p>
 
                     {/* ✅ Grid Layout for Event Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-7xl gap-8">
                         {
                             events.slice(0, 6).map((event) => (
                                 <Card
@@ -52,9 +53,9 @@ const Home = () => {
 
                     {/* "See All" Button (Optional) */}
                     <div className="text-center mt-12">
-                        <button className="px-8 py-3 bg-gray-900 text-white rounded-full font-bold hover:bg-green-600 transition-all shadow-md">
+                        <Link to='/library' className="px-8 py-3 bg-gray-900 text-white rounded-full font-bold hover:bg-green-600 transition-all shadow-md">
                             Explore All Events
-                        </button>
+                        </Link>
                     </div>
                 </div>
             

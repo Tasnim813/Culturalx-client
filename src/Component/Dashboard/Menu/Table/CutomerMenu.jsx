@@ -18,18 +18,18 @@ const CustomerMenu = () => {
       
 
       {/* Favorite Meal – Always visible */}
-      <MenuItem
+      {/* <MenuItem
         icon={BsHeart}
         label="Favorite Meal"
         address="favorite-meal"
-      />
+      /> */}
 
       {/* My Review – Always visible */}
-      <MenuItem
+      {/* <MenuItem
         icon={BsStar}
         label="My Review"
         address="my-review"
-      />
+      /> */}
     </>
   );
 };

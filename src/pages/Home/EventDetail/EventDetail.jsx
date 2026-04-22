@@ -30,12 +30,14 @@ const EventDetail = () => {
 
     return (
         <div className="max-w-5xl mx-auto my-10 p-4">
+
             <div className="bg-white rounded-3xl shadow-sm overflow-hidden">
 
                 {/* Image */}
                 <div className="relative h-[400px]">
                     <img src={image} className="w-full h-full object-cover" />
-                    <div className="absolute top-5 left-5 bg-green-500 text-white px-4 py-1 rounded-full">
+
+                    <div className="absolute top-5 left-5 bg-[#0F3D2E] text-white px-4 py-1 rounded-full">
                         {category}
                     </div>
                 </div>
@@ -44,40 +46,74 @@ const EventDetail = () => {
 
                     {/* Details */}
                     <div className="lg:col-span-2 space-y-6">
-                        <h1 className="text-4xl font-bold">{name}</h1>
-                        <p>{description}</p>
 
-                        <div className="grid md:grid-cols-2 gap-4">
-                            <p><FaCalendarDays /> {date}</p>
-                            <p><FaRegClock /> {startTime} - {endTime}</p>
-                            <p className="md:col-span-2"><FaLocationDot /> {location}</p>
+                        <h1 className="text-4xl font-bold text-[#0F3D2E]">
+                            {name}
+                        </h1>
+
+                        <p className="text-gray-600">
+                            {description}
+                        </p>
+
+                        <div className="grid md:grid-cols-2 gap-4 text-gray-700">
+
+                            <p className="flex items-center gap-2">
+                                <FaCalendarDays className="text-[#0F3D2E]" /> 
+                                {date}
+                            </p>
+
+                            <p className="flex items-center gap-2">
+                                <FaRegClock className="text-[#0F3D2E]" /> 
+                                {startTime} - {endTime}
+                            </p>
+
+                            <p className="md:col-span-2 flex items-center gap-2">
+                                <FaLocationDot className="text-[#0F3D2E]" /> 
+                                {location}
+                            </p>
+
                         </div>
+
                     </div>
 
                     {/* Booking Card */}
-                    <div className="bg-gray-50 p-6 rounded-xl space-y-5">
-                        <h2 className="text-2xl font-bold text-green-600">${price}</h2>
+                    <div className="bg-gray-50 p-6 rounded-xl space-y-5 border border-[#E5E7EB]">
+
+                        <h2 className="text-2xl font-bold text-[#0F3D2E]">
+                            ${price}
+                        </h2>
 
                         <button
                             onClick={() => setIsOpen(true)}
-                            className="w-full bg-black text-white py-3 rounded-xl hover:bg-green-600"
+                            className="w-full bg-[#0F3D2E] text-white py-3 rounded-xl hover:bg-[#145A32] transition"
                         >
                             Book Now
                         </button>
 
-                        <div className="flex items-center gap-3">
-                            <img src={seller?.image} className="w-10 h-10 rounded-full" />
+                        <div className="flex items-center gap-3 pt-2">
+
+                            <img
+                                src={seller?.image}
+                                className="w-10 h-10 rounded-full border border-[#0F3D2E]"
+                            />
+
                             <div>
-                                <p>{seller?.name}</p>
-                                <p className="text-sm text-gray-500">{seller?.email}</p>
+                                <p className="text-[#0F3D2E] font-semibold">
+                                    {seller?.name}
+                                </p>
+                                <p className="text-sm text-gray-500">
+                                    {seller?.email}
+                                </p>
                             </div>
+
                         </div>
+
                     </div>
 
                 </div>
             </div>
 
-            {/* ✅ Modal */}
+            {/* Modal */}
             <PurchaseOrder
                 event={event}
                 isOpen={isOpen}
