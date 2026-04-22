@@ -7,7 +7,10 @@ import Library from "../pages/Library/Library";
 import PrivateRoute from "./privateRoute";
 import DashBoardLayout from "../layout/DashBoardLayout";
 import Profile from "../pages/Dashboard/Common/Profile";
-import AddBook from "../pages/Dashboard/Admin/AddBook";
+import AddEvent from "../pages/Dashboard/Admin/AddEvent";
+import EventDetail from "../pages/Home/EventDetail/EventDetail";
+import MyOrder from "../pages/Dashboard/Cutomer/MyOrder";
+
 
 export  const router=createBrowserRouter([
     {
@@ -30,6 +33,10 @@ export  const router=createBrowserRouter([
             {
                 path:'/library',
                 Component:Library
+            },
+            {
+                path:'/event-details/:id',
+                Component: EventDetail
             }
            
         ]
@@ -49,8 +56,12 @@ export  const router=createBrowserRouter([
                 </PrivateRoute>
             },
             {
-                path:"Add-book",
-                element: <AddBook></AddBook>
+                path:"Add-event",
+                element: <AddEvent></AddEvent>
+            },
+            {
+                path:"my-orders",
+                element: <MyOrder></MyOrder>
             }
         ]
     }

@@ -11,7 +11,7 @@ const AdminMenu = () => {
                 label='Statistics'
                 address='static-page'
               />
-      <MenuItem icon={FaUserCog} label='Add Book' address='Add-book' />
+      <MenuItem icon={FaUserCog} label='Add Event' address='Add-event' />
       <MenuItem icon={ImCart} label='Manage Request' address='manage-request' />
     </>
   )

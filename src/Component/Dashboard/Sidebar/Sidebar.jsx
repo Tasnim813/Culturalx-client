@@ -5,6 +5,7 @@ import { AiOutlineBars } from 'react-icons/ai';
 import { FcSettings } from 'react-icons/fc';
 import { GrLogout } from 'react-icons/gr';
 import AdminMenu from '../Menu/AdminMenu';
+import CustomerMenu from '../Menu/Table/CutomerMenu';
 
 const Sidebar = () => {
   const {logOut}=useAuth()
@@ -74,6 +75,7 @@ const Sidebar = () => {
              <SellerMenu />
                  <AdminMenu />     */}
                  <AdminMenu></AdminMenu>
+                 <CustomerMenu></CustomerMenu>
                        </nav>
            
           </div>
