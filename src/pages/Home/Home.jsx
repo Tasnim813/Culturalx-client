@@ -31,7 +31,7 @@ const Home = () => {
            
                 <div className="my-16">
                    <h2 className="text-4xl font-extrabold mb-4 text-center text-[#0F3D2E]">
-  Upcoming Popular Events
+  Upcoming Popular Events here
 </h2>
 
 <p className="mb-10 text-gray-600 text-center max-w-2xl mx-auto">
