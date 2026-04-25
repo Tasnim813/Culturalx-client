@@ -4,7 +4,7 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Library from "../pages/Library/Library";
-import PrivateRoute from "./privateRoute";
+
 import DashBoardLayout from "../layout/DashBoardLayout";
 import AddEvent from "../pages/Dashboard/Admin/AddEvent";
 import EventDetail from "../pages/Home/EventDetail/EventDetail";
@@ -14,40 +14,43 @@ import TotalBooking from "../pages/Dashboard/Admin/TotalBooking";
 
 import ManageUser from "../pages/Dashboard/Admin/ManageUser";
 import Static from "../pages/Dashboard/Common/Static";
+import PrivateRoute from "./PrivateRoute";
 
 
 export  const router=createBrowserRouter([
     {
         path:'/',
-        Component:Rootlayout,
+        element:<Rootlayout></Rootlayout>,
         children:[
             {
                 path:'/',
-                Component:Home
+                element:<Home></Home>
 
             },
              {
                 path:'/login',
-                Component:Login,
+                element:<Login></Login>,
             },
             {
                 path:'/register',
-                Component: Register
+                element: <Register></Register>,
             },
             {
                 path:'/library',
-                Component:Library
+                element:<Library></Library>
             },
             {
                 path:'/event-details/:id',
                 element:<PrivateRoute>
                     <EventDetail></EventDetail>
-                </PrivateRoute> 
+                </PrivateRoute>
+                    
+                
                 
             },
             {
                 path: '/payment-success',
-                Component: Payment
+                element: <Payment></Payment>
             }
            
         ]
