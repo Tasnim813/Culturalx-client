@@ -6,6 +6,8 @@ import axios from 'axios';
 import Card from './Card';
 import Loading from '../Loading/loading';
 import { Link } from 'react-router';
+import Testimonials from '../../Component/Dashboard/Testimonials/Testimonials';
+import FestivalRules from '../../Component/Dashboard/FestivalRules/FestivalRules';
 
 const Home = () => {
     // ✅ Event fetch korar jonno useQuery
@@ -61,6 +63,9 @@ const Home = () => {
             
 
             {/* Tumi chhaile eikhane Review ba HowItWorks component add korte paro */}
+
+            <Testimonials></Testimonials>
+            <FestivalRules></FestivalRules>
         </div>
     );
 };
