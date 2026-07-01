@@ -1,16 +1,33 @@
-# React + Vite
+# 🎭 Cultural-X
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern full-stack cultural festival booking platform where users can explore festival events, book tickets online, make secure payments, and manage their bookings. Administrators can efficiently manage events, users, bookings, and revenue through a secure dashboard.
 
-Currently, two official plugins are available:
+## 🔗 Live Links
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* 🌐 **Live Website:https://culturalx-client.vercel.app/
+* 💻 **Client Repository:https://github.com/Tasnim813/Culturalx-client
+* ⚙️ **Server Repository:https://github.com/Tasnim813/Culturalx-server
+* 🌍 **Server API:https://cultural-server.vercel.app/
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📖 Project Overview
 
-## Expanding the ESLint configuration
+**Cultural-X** is an event management and ticket booking platform designed for cultural festivals. Users can browse events, book tickets, complete secure online payments, and manage their bookings. Administrators can manage events, users, bookings, and revenue through a secure dashboard.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Key Features
+
+* 🔐 Secure Authentication (JWT & Firebase Authentication)
+* 🎭 Browse Cultural Festival Events
+* 🎟️ Online Event Ticket Booking
+* 💳 Secure Payment Integration
+* 📄 Booking History
+* 📍 Google Maps Integration
+* 🖼️ Event Gallery
+* 📊 Admin Dashboard
+* 👥 User Management
+* 📅 Event Management (CRUD)
+* 🎟️ Booking Management
+* 🔒 Role-Based Protected Routes
+* 📱 Fully Responsive Design
+
